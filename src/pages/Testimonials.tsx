@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, Sparkles, Heart, Award, TrendingUp } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
@@ -93,113 +92,235 @@ const Testimonials = () => {
   ];
 
   const stats = [
-    { number: "150+", label: "Completed Projects" },
-    { number: "4.9", label: "Average Rating" },
-    { number: "98%", label: "Customer Satisfaction" },
-    { number: "10+", label: "Years Experience" }
+    { number: "150+", label: "Completed Projects", icon: TrendingUp },
+    { number: "4.9", label: "Average Rating", icon: Star },
+    { number: "98%", label: "Customer Satisfaction", icon: Heart },
+    { number: "10+", label: "Years Experience", icon: Award }
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Animated background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+      </div>
+
       <Header />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-muted/30">
+      {/* Hero Section with Glassmorphism */}
+      <section className="pt-32 pb-20 relative">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Client Testimonials</h1>
-            <p className="text-xl text-muted-foreground">
-              Don't just take our word for it - hear from homeowners who have experienced the Furu Holmes difference
-            </p>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
+              <div className="flex justify-center mb-6">
+                <Sparkles className="h-16 w-16 text-yellow-400 animate-pulse" />
+              </div>
+              <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-yellow-200 bg-clip-text text-transparent">
+                Client Stories
+              </h1>
+              <p className="text-xl text-white/80 leading-relaxed">
+                Real transformations, real emotions, real results - discover what makes our clients fall in love with their homes all over again
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16">
+      {/* Floating Stats Cards */}
+      <section className="py-16 relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 fade-in">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.number}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
+              <div 
+                key={index} 
+                className="group relative"
+                style={{
+                  transform: `translateY(${index % 2 === 0 ? '10px' : '-10px'})`,
+                  animationDelay: `${index * 200}ms`
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                <div className="relative bg-black/30 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300 group-hover:scale-105">
+                  <stat.icon className="h-8 w-8 text-yellow-400 mb-4 mx-auto" />
+                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-white/70 text-sm">{stat.label}</div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Grid */}
-      <section className="py-20">
+      {/* Revolutionary Testimonials Grid */}
+      <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="h-full hover:shadow-lg transition-shadow duration-300 fade-in">
-                <CardContent className="p-8 h-full flex flex-col">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                      ))}
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={testimonial.id}
+                className={`group relative ${index % 3 === 1 ? 'lg:translate-y-8' : ''} ${index % 3 === 2 ? 'lg:translate-y-4' : ''}`}
+                style={{
+                  animationDelay: `${index * 100}ms`
+                }}
+              >
+                {/* Glow effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                
+                {/* Main card */}
+                <div className="relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/30 transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2">
+                  
+                  {/* Floating quote icon */}
+                  <div className="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full p-3 shadow-lg">
+                    <Quote className="h-6 w-6 text-white" />
+                  </div>
+
+                  {/* Stars with gradient */}
+                  <div className="flex justify-center mb-6">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star 
+                        key={i} 
+                        className="h-6 w-6 text-yellow-400 fill-current animate-pulse" 
+                        style={{ animationDelay: `${i * 100}ms` }}
+                      />
+                    ))}
+                  </div>
+                  
+                  {/* Testimonial text */}
+                  <blockquote className="text-white/90 mb-8 text-lg leading-relaxed italic relative">
+                    <span className="text-6xl text-purple-400/30 absolute -top-4 -left-2">"</span>
+                    {testimonial.text}
+                    <span className="text-6xl text-purple-400/30 absolute -bottom-8 -right-2">"</span>
+                  </blockquote>
+                  
+                  {/* Client info with modern styling */}
+                  <div className="relative">
+                    <div className="flex items-center space-x-4">
+                      {/* Avatar placeholder with gradient */}
+                      <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
+                        <span className="text-white text-xl font-bold">
+                          {testimonial.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
+                      
+                      <div className="flex-1">
+                        <div className="font-bold text-xl bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                          {testimonial.name}
+                        </div>
+                        <div className="text-white/60 text-sm">{testimonial.location}</div>
+                        <div className="text-yellow-400 font-medium text-sm mt-1 flex items-center">
+                          <Sparkles className="h-3 w-3 mr-1" />
+                          {testimonial.project}
+                        </div>
+                      </div>
                     </div>
-                    <Quote className="h-8 w-8 text-muted-foreground/30" />
+                    
+                    <div className="mt-4 text-xs text-white/50 text-right">
+                      {testimonial.date}
+                    </div>
                   </div>
-                  
-                  <p className="text-muted-foreground mb-6 flex-grow italic leading-relaxed">
-                    "{testimonial.text}"
-                  </p>
-                  
-                  <div className="border-t pt-4">
-                    <div className="font-semibold text-lg">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.location}</div>
-                    <div className="text-sm text-primary font-medium mt-1">{testimonial.project}</div>
-                    <div className="text-xs text-muted-foreground mt-2">{testimonial.date}</div>
-                  </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Testimonial */}
-      <section className="py-20 bg-muted/30">
+      {/* Ultra-modern Featured Testimonial */}
+      <section className="py-20 relative">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card className="fade-in">
-              <CardContent className="p-12 text-center">
-                <Quote className="h-16 w-16 text-primary/20 mx-auto mb-6" />
-                <div className="flex justify-center mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-6 w-6 text-yellow-400 fill-current" />
-                  ))}
+          <div className="max-w-6xl mx-auto">
+            <div className="relative group">
+              {/* Mega glow effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 via-pink-600 via-blue-600 to-purple-600 rounded-[3rem] blur-2xl opacity-30 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
+              
+              <div className="relative bg-black/20 backdrop-blur-2xl rounded-[3rem] p-16 border border-white/20 overflow-hidden">
+                {/* Background pattern */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent transform -skew-y-12 translate-y-full group-hover:translate-y-0 transition-transform duration-1000"></div>
                 </div>
-                <blockquote className="text-2xl md:text-3xl text-muted-foreground mb-8 italic leading-relaxed">
-                  "Working with Furu Holmes LLC was the best decision we made for our home renovation. 
-                  Their professionalism, attention to detail, and commitment to quality is unmatched. 
-                  They didn't just remodel our kitchen - they transformed our entire home experience."
-                </blockquote>
-                <div className="text-xl font-semibold">Jennifer & Mark Stevens</div>
-                <div className="text-muted-foreground">Complete Home Renovation, 2024</div>
-              </CardContent>
-            </Card>
+                
+                <div className="relative text-center">
+                  {/* Floating elements */}
+                  <div className="absolute top-0 left-1/4 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
+                  <div className="absolute top-8 right-1/4 w-1 h-1 bg-purple-400 rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-8 left-1/3 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce"></div>
+                  
+                  <Quote className="h-24 w-24 mx-auto mb-8 text-white/20" />
+                  
+                  <div className="flex justify-center mb-8">
+                    {[...Array(5)].map((_, i) => (
+                      <Star 
+                        key={i} 
+                        className="h-8 w-8 text-yellow-400 fill-current mx-1" 
+                        style={{ 
+                          animationDelay: `${i * 200}ms`,
+                          filter: 'drop-shadow(0 0 8px rgba(250, 204, 21, 0.5))'
+                        }}
+                      />
+                    ))}
+                  </div>
+                  
+                  <blockquote className="text-3xl md:text-4xl font-light mb-12 leading-relaxed bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
+                    "Working with Furu Holmes LLC was the best decision we made for our home renovation. 
+                    Their professionalism, attention to detail, and commitment to quality is unmatched. 
+                    They didn't just remodel our kitchen - they transformed our entire home experience."
+                  </blockquote>
+                  
+                  <div className="flex items-center justify-center space-x-6">
+                    <div className="w-20 h-20 bg-gradient-to-br from-purple-500 via-pink-500 to-yellow-500 rounded-full flex items-center justify-center shadow-2xl">
+                      <span className="text-white text-2xl font-bold">JS</span>
+                    </div>
+                    <div className="text-left">
+                      <div className="text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                        Jennifer & Mark Stevens
+                      </div>
+                      <div className="text-white/70 mt-1">Complete Home Renovation, 2024</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 hero-gradient text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Join Our Happy Clients?</h2>
-          <p className="text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-            Experience the same quality craftsmanship and exceptional service that our clients rave about.
+      {/* Futuristic CTA Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900 via-blue-900 to-purple-900"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-white via-yellow-200 to-white bg-clip-text text-transparent">
+            Ready to Join Our Happy Clients?
+          </h2>
+          <p className="text-xl mb-12 text-white/80 max-w-3xl mx-auto leading-relaxed">
+            Experience the same quality craftsmanship and exceptional service that our clients rave about. 
+            Your dream home transformation starts with a single conversation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-primary font-semibold px-8">
-              Get Your Free Estimate
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button 
+              size="lg" 
+              className="relative group bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold px-12 py-6 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+            >
+              <span className="relative z-10">Get Your Free Estimate</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-orange-400 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-300"></div>
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              View Our Portfolio
+            
+            <Button 
+              size="lg" 
+              className="relative group bg-white/10 backdrop-blur-xl border-2 border-white/30 text-white hover:bg-white/20 font-bold px-12 py-6 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+            >
+              <span className="relative z-10">View Our Portfolio</span>
+              <div className="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
             </Button>
           </div>
         </div>
