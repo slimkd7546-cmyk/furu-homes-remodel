@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Home, Info, Briefcase, Camera, MessageSquare, Phone } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -28,14 +27,14 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+    <header aria-label="Main navigation" className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-background/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-    }`}>
-      <nav className="container mx-auto px-4 py-4">
+    }`} role="banner">
+      <nav className="container mx-auto px-4 py-4" role="navigation" aria-label="Primary">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+          <Link to="/" className="flex items-center space-x-2" aria-label="Furu Holmes Home" tabIndex={0}>
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center" aria-hidden="true">
               <Home className="h-6 w-6 text-primary-foreground" />
             </div>
             <div>
@@ -45,7 +44,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8" role="menubar">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -55,11 +54,13 @@ const Header = () => {
                     ? 'text-primary border-b-2 border-primary'
                     : 'text-foreground'
                 }`}
+                role="menuitem"
+                tabIndex={0}
               >
                 {item.label}
               </Link>
             ))}
-            <Button className="bg-primary hover:bg-primary/90">
+            <Button className="bg-primary hover:bg-primary/90" tabIndex={0}>
               Free Estimate
             </Button>
           </div>

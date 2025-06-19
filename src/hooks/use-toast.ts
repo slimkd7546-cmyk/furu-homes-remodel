@@ -168,6 +168,17 @@ function toast({ ...props }: Toast) {
   }
 }
 
+/**
+ * useToast custom hook
+ *
+ * Provides toast notification management for the application.
+ *
+ * @returns {object} - Toast state and functions to show, update, and dismiss toasts.
+ *
+ * Example usage:
+ * const { toast } = useToast();
+ * toast({ title: 'Success', description: 'Your action was successful.' });
+ */
 function useToast() {
   const [state, setState] = React.useState<State>(memoryState)
 
