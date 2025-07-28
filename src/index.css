@@ -2,85 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom color palette for Furu Holmes LLC */
+/* Premium color palette for Furu Homes */
 @layer base {
   :root {
-    --background: 46 42% 96%;
-    --foreground: 25 25% 15%;
+    /* Base colors - rich, luxurious palette */
+    --background: 36 30% 97%; /* warm white */
+    --foreground: 35 25% 18%; /* deep espresso */
 
-    --card: 0 0% 100%;
-    --card-foreground: 25 25% 15%;
+    --card: 0 0% 100%; /* pure white */
+    --card-foreground: 35 25% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 25 25% 15%;
+    --popover-foreground: 35 25% 18%;
 
-    --primary: 25 40% 25%;
-    --primary-foreground: 46 42% 96%;
+    /* Primary - rich gold from logo */
+    --primary: 36 40% 50%; /* #b39149 - gold */
+    --primary-foreground: 36 30% 97%;
 
-    --secondary: 35 25% 85%;
-    --secondary-foreground: 25 40% 25%;
+    /* Secondary - soft cream */
+    --secondary: 36 25% 92%; /* #f5f0e5 */
+    --secondary-foreground: 36 40% 50%;
 
-    --muted: 35 25% 90%;
-    --muted-foreground: 25 15% 45%;
+    /* Muted - light gold gray */
+    --muted: 36 15% 94%; /* #f2f0eb */
+    --muted-foreground: 36 15% 45%; /* #8a8574 */
 
-    --accent: 35 35% 75%;
-    --accent-foreground: 25 40% 25%;
+    /* Accent - deep bronze */
+    --accent: 30 30% 40%; /* #8c6d4d */
+    --accent-foreground: 36 30% 97%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 35 25% 85%;
-    --input: 35 25% 85%;
-    --ring: 25 40% 25%;
+    --border: 36 15% 85%;
+    --input: 36 15% 85%;
+    --ring: 36 40% 50%;
 
     --radius: 0.5rem;
 
+    /* Custom brand colors */
+    --brand-dark: 35 30% 20%; /* #483a28 - dark espresso */
+    --brand-medium: 36 40% 50%; /* #b39149 - gold */
+    --brand-light: 36 40% 80%; /* #e6d5ad - light gold */
+    --brand-accent: 30 30% 40%; /* #8c6d4d - bronze */
+    --brand-text-light: 36 30% 97%; /* #faf7f0 */
+
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-foreground: 35 25% 18%;
+    --sidebar-primary: 36 40% 50%;
+    --sidebar-primary-foreground: 36 30% 97%;
+    --sidebar-accent: 36 15% 94%;
+    --sidebar-accent-foreground: 35 25% 18%;
+    --sidebar-border: 36 15% 85%;
+    --sidebar-ring: 36 40% 50%;
   }
 
   .dark {
-    --background: 25 20% 10%; /* deep warm brown */
-    --foreground: 35 35% 90%; /* warm light beige */
+    /* Dark mode - rich and sophisticated */
+    --background: 35 25% 12%; /* #2a241c - deep espresso */
+    --foreground: 36 30% 92%; /* #f0ece0 */
 
-    --card: 30 20% 14%; /* rich brown */
-    --card-foreground: 35 35% 90%;
+    --card: 35 20% 18%; /* #3a3225 - dark espresso */
+    --card-foreground: 36 30% 92%;
 
-    --popover: 30 20% 14%;
-    --popover-foreground: 35 35% 90%;
+    --popover: 35 20% 18%;
+    --popover-foreground: 36 30% 92%;
 
-    --primary: 30 60% 40%; /* warm gold-brown */
-    --primary-foreground: 35 35% 95%;
+    /* Primary - gold for dark mode */
+    --primary: 36 40% 50%; /* #b39149 - gold */
+    --primary-foreground: 35 25% 12%;
 
-    --secondary: 25 15% 18%;
-    --secondary-foreground: 35 35% 90%;
+    --secondary: 35 15% 25%; /* #4d4636 */
+    --secondary-foreground: 36 30% 92%;
 
-    --muted: 25 10% 20%;
-    --muted-foreground: 35 20% 70%;
+    --muted: 35 10% 20%; /* #3a3225 */
+    --muted-foreground: 36 15% 75%; /* #c5bba6 */
 
-    --accent: 25 40% 30%; /* deep terracotta */
-    --accent-foreground: 35 35% 95%;
+    --accent: 30 30% 40%; /* #8c6d4d - bronze */
+    --accent-foreground: 36 30% 92%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 35 35% 90%;
+    --destructive-foreground: 36 30% 92%;
 
-    --border: 30 20% 20%;
-    --input: 30 20% 20%;
-    --ring: 35 35% 90%;
-    --sidebar-background: 25 15% 12%;
-    --sidebar-foreground: 35 35% 90%;
-    --sidebar-primary: 30 60% 40%;
-    --sidebar-primary-foreground: 35 35% 95%;
-    --sidebar-accent: 25 40% 30%;
-    --sidebar-accent-foreground: 35 35% 95%;
-    --sidebar-border: 30 20% 20%;
-    --sidebar-ring: 35 35% 90%;
+    --border: 35 15% 30%;
+    --input: 35 15% 30%;
+    --ring: 36 40% 50%;
+
+    --sidebar-background: 35 25% 10%;
+    --sidebar-foreground: 36 30% 92%;
+    --sidebar-primary: 36 40% 50%;
+    --sidebar-primary-foreground: 35 25% 12%;
+    --sidebar-accent: 35 15% 30%;
+    --sidebar-accent-foreground: 36 30% 92%;
+    --sidebar-border: 35 15% 30%;
+    --sidebar-ring: 36 40% 50%;
   }
 }
 
@@ -91,7 +106,13 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      "Roboto",
+      sans-serif;
   }
 
   html {
@@ -101,17 +122,39 @@
 
 /* Custom gradient backgrounds */
 .hero-gradient {
-  background: linear-gradient(135deg, hsl(25, 40%, 25%) 0%, hsl(35, 35%, 35%) 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--brand-dark)) 0%,
+    hsl(var(--brand-medium)) 50%,
+    hsl(var(--primary)) 100%
+  );
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.wood-texture {
-  background-image: 
-    linear-gradient(45deg, rgba(139, 119, 101, 0.1) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(139, 119, 101, 0.1) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(139, 119, 101, 0.1) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(139, 119, 101, 0.1) 75%);
-  background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+.brand-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--brand-dark)) 0%,
+    hsl(var(--brand-medium)) 100%
+  );
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.accent-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--accent)) 0%,
+    hsl(var(--brand-medium)) 100%
+  );
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.subtle-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237d7055' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.texture-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%237d7055' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 /* Smooth animations */
@@ -135,10 +178,32 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .float-animation {
+    animation: none;
+  }
+}
+
+/* Focus styles for better accessibility */
+.focus\:ring-2:focus {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .text-muted-foreground {
+    color: hsl(var(--foreground));
   }
 }

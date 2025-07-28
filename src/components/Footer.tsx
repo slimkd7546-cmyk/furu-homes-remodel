@@ -1,7 +1,13 @@
-
-import React from 'react';
-import { Home, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -11,15 +17,15 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary-foreground rounded-lg flex items-center justify-center">
-                <Home className="h-5 w-5 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold">Furu Holmes LLC</h3>
-              </div>
+              <img
+                src="/furu-logo-new.png"
+                alt="Furu Homes Logo"
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-sm text-primary-foreground/80">
-              Transforming houses into dream homes with quality craftsmanship and creative solutions.
+              Transforming houses into dream homes with quality craftsmanship
+              and creative solutions.
             </p>
             <div className="flex space-x-4">
               <Facebook className="h-5 w-5 cursor-pointer hover:text-accent transition-colors" />
@@ -32,11 +38,51 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/" className="hover:text-accent transition-colors">Home</Link></li>
-              <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link to="/services" className="hover:text-accent transition-colors">Services</Link></li>
-              <li><Link to="/portfolio" className="hover:text-accent transition-colors">Portfolio</Link></li>
-              <li><Link to="/testimonials" className="hover:text-accent transition-colors">Testimonials</Link></li>
+              <li>
+                <Link to="/" className="hover:text-accent transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  className="hover:text-accent transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="hover:text-accent transition-colors"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/portfolio"
+                  className="hover:text-accent transition-colors"
+                >
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/testimonials"
+                  className="hover:text-accent transition-colors"
+                >
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/blog"
+                  className="hover:text-accent transition-colors"
+                >
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -44,10 +90,18 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Our Services</h4>
             <ul className="space-y-2 text-sm">
-              <li className="hover:text-accent transition-colors cursor-pointer">Kitchen Remodeling</li>
-              <li className="hover:text-accent transition-colors cursor-pointer">Bathroom Renovations</li>
-              <li className="hover:text-accent transition-colors cursor-pointer">Whole Home Remodeling</li>
-              <li className="hover:text-accent transition-colors cursor-pointer">Custom Projects</li>
+              <li className="hover:text-accent transition-colors cursor-pointer">
+                Kitchen Remodeling
+              </li>
+              <li className="hover:text-accent transition-colors cursor-pointer">
+                Bathroom Renovations
+              </li>
+              <li className="hover:text-accent transition-colors cursor-pointer">
+                Whole Home Remodeling
+              </li>
+              <li className="hover:text-accent transition-colors cursor-pointer">
+                Custom Projects
+              </li>
             </ul>
           </div>
 
@@ -61,7 +115,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span>info@furuholmes.com</span>
+                <span>info@furuhomes.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
@@ -72,7 +126,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>&copy; 2024 Furu Holmes LLC. All rights reserved. | Licensed & Insured</p>
+          <p>
+            &copy; 2024 Furu Homes. All rights reserved. | Licensed & Insured
+          </p>
         </div>
       </div>
     </footer>
