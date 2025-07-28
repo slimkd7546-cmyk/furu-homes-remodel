@@ -1,0 +1,17 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M100 40L60 80V160H85V120H115V160H140V80L100 40Z" fill="#7D7055" stroke="#7D7055" stroke-width="4"/>
+  <path d="M140 80L160 100V160H140V80Z" fill="#7D7055" stroke="#7D7055" stroke-width="4"/>
+  <path d="M60 80L40 100V160H60V80Z" fill="#7D7055" stroke="#7D7055" stroke-width="4"/>
+  <path d="M40 100L20 120V160H40V100Z" fill="#7D7055" stroke="#7D7055" stroke-width="4"/>
+  <path d="M160 100L180 120V160H160V100Z" fill="#7D7055" stroke="#7D7055" stroke-width="4"/>
+  <path d="M45 180H55V190H45V180Z" fill="#7D7055"/>
+  <path d="M60 180H70V190H60V180Z" fill="#7D7055"/>
+  <path d="M75 180H85V190H75V180Z" fill="#7D7055"/>
+  <path d="M90 180H100V190H90V180Z" fill="#7D7055"/>
+  <path d="M105 180H115V190H105V180Z" fill="#7D7055"/>
+  <path d="M120 180H130V190H120V180Z" fill="#7D7055"/>
+  <path d="M135 180H145V190H135V180Z" fill="#7D7055"/>
+  <path d="M150 180H160V190H150V180Z" fill="#7D7055"/>
+  <text x="50" y="175" font-family="Arial" font-weight="bold" font-size="24" fill="#7D7055">FURU</text>
+  <text x="50" y="195" font-family="Arial" font-size="14" fill="#7D7055">HOMES</text>
+</svg>
