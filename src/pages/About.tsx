@@ -72,17 +72,26 @@ const About = () => {
     <>
       <Helmet>
         <title>About | Furu Holmes LLC</title>
-        <meta name="description" content="Learn about Furu Holmes LLC, our mission, values, and team. Trusted luxury home remodeling and renovation experts." />
+        <meta
+          name="description"
+          content="Learn about Furu Holmes LLC, our mission, values, and team. Trusted luxury home remodeling and renovation experts."
+        />
         <meta property="og:title" content="About - Furu Holmes LLC" />
-        <meta property="og:description" content="Learn about Furu Holmes LLC, our mission, values, and team. Trusted luxury home remodeling and renovation experts." />
+        <meta
+          property="og:description"
+          content="Learn about Furu Holmes LLC, our mission, values, and team. Trusted luxury home remodeling and renovation experts."
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
+        <meta
+          property="og:image"
+          content="https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        />
         <meta property="og:url" content="https://furuholmes.com/about" />
       </Helmet>
       
       <div className="min-h-screen bg-white text-gray-900">
         <Header />
-        
+
         {/* Hero Section */}
         <section className="pt-32 pb-20 bg-gradient-to-br from-gray-900 to-gray-800">
           <div className="container mx-auto px-4">
@@ -139,18 +148,22 @@ const About = () => {
                 <h2 className="text-4xl font-bold mb-6 text-gray-900">Our Story</h2>
                 <div className="space-y-6 text-lg text-gray-600">
                   <p>
-                    Founded with a passion for exceptional craftsmanship and customer satisfaction, 
-                    Furu Holmes LLC has been transforming homes and lives for over a decade. What started 
-                    as a small family business has grown into a trusted name in home remodeling and renovation.
+                    Founded with a passion for exceptional craftsmanship and
+                    customer satisfaction, Furu Holmes LLC has been transforming
+                    homes and lives for over a decade. What started as a small
+                    family business has grown into a trusted name in home
+                    remodeling and renovation.
                   </p>
                   <p>
-                    We believe that your home is more than just a building – it's where memories are made, 
-                    families grow, and dreams come to life. That's why we approach every project with the 
-                    same level of care and attention we would give to our own homes.
+                    We believe that your home is more than just a building –
+                    it's where memories are made, families grow, and dreams come
+                    to life. That's why we approach every project with the same
+                    level of care and attention we would give to our own homes.
                   </p>
                   <p>
-                    Our team of skilled craftsmen, designers, and project managers work together to ensure 
-                    that every detail meets our high standards and exceeds your expectations.
+                    Our team of skilled craftsmen, designers, and project
+                    managers work together to ensure that every detail meets our
+                    high standards and exceeds your expectations.
                   </p>
                 </div>
               </motion.div>

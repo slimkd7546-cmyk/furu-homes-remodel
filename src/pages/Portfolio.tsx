@@ -17,103 +17,149 @@ const Portfolio = () => {
       id: 1,
       title: "Modern Kitchen Transformation",
       category: "kitchen",
-      description: "Complete kitchen remodel featuring custom cabinets, quartz countertops, and high-end appliances.",
+      description:
+        "Complete kitchen remodel featuring custom cabinets, quartz countertops, and high-end appliances.",
       beforeImage: "photo-1721322800607-8c38375eef04",
       afterImage: "photo-1483058712412-4245e9b90334",
       details: {
         duration: "3 weeks",
         scope: "Full kitchen renovation",
-        features: ["Custom cabinetry", "Quartz countertops", "LED lighting", "Tile backsplash"]
-      }
+        features: [
+          "Custom cabinetry",
+          "Quartz countertops",
+          "LED lighting",
+          "Tile backsplash",
+        ],
+      },
     },
     {
       id: 2,
       title: "Luxury Bathroom Renovation",
-      category: "bathroom", 
-      description: "Spa-like bathroom featuring a walk-in shower, double vanity, and heated floors.",
+      category: "bathroom",
+      description:
+        "Spa-like bathroom featuring a walk-in shower, double vanity, and heated floors.",
       beforeImage: "photo-1472396961693-142e6e269027",
       afterImage: "photo-1721322800607-8c38375eef04",
       details: {
         duration: "2 weeks",
         scope: "Master bathroom renovation",
-        features: ["Walk-in shower", "Double vanity", "Heated floors", "Custom tile work"]
-      }
+        features: [
+          "Walk-in shower",
+          "Double vanity",
+          "Heated floors",
+          "Custom tile work",
+        ],
+      },
     },
     {
       id: 3,
       title: "Open Concept Living Space",
       category: "whole-home",
-      description: "Opened up the floor plan to create a seamless flow between kitchen, dining, and living areas.",
+      description:
+        "Opened up the floor plan to create a seamless flow between kitchen, dining, and living areas.",
       beforeImage: "photo-1487958449943-2429e8be8625",
       afterImage: "photo-1483058712412-4245e9b90334",
       details: {
         duration: "6 weeks",
         scope: "Structural modification",
-        features: ["Wall removal", "Beam installation", "Hardwood floors", "Updated lighting"]
-      }
+        features: [
+          "Wall removal",
+          "Beam installation",
+          "Hardwood floors",
+          "Updated lighting",
+        ],
+      },
     },
     {
       id: 4,
       title: "Custom Built-in Entertainment Center",
       category: "custom",
-      description: "Custom designed and built entertainment center with integrated storage and lighting.",
+      description:
+        "Custom designed and built entertainment center with integrated storage and lighting.",
       beforeImage: "photo-1483058712412-4245e9b90334",
       afterImage: "photo-1721322800607-8c38375eef04",
       details: {
         duration: "1 week",
         scope: "Custom millwork",
-        features: ["Built-in shelving", "Cable management", "LED accent lighting", "Matching wood stain"]
-      }
+        features: [
+          "Built-in shelving",
+          "Cable management",
+          "LED accent lighting",
+          "Matching wood stain",
+        ],
+      },
     },
     {
       id: 5,
       title: "Basement Finishing Project",
       category: "custom",
-      description: "Transformed an unfinished basement into a family recreation room with bar area.",
+      description:
+        "Transformed an unfinished basement into a family recreation room with bar area.",
       beforeImage: "photo-1472396961693-142e6e269027",
       afterImage: "photo-1487958449943-2429e8be8625",
       details: {
         duration: "4 weeks",
         scope: "Basement finishing",
-        features: ["Drywall installation", "Flooring", "Bar construction", "Recessed lighting"]
-      }
+        features: [
+          "Drywall installation",
+          "Flooring",
+          "Bar construction",
+          "Recessed lighting",
+        ],
+      },
     },
     {
       id: 6,
       title: "Master Suite Addition",
       category: "whole-home",
-      description: "Added a new master suite with walk-in closet and luxury bathroom.",
+      description:
+        "Added a new master suite with walk-in closet and luxury bathroom.",
       beforeImage: "photo-1721322800607-8c38375eef04",
       afterImage: "photo-1472396961693-142e6e269027",
       details: {
         duration: "8 weeks",
         scope: "Room addition",
-        features: ["Structural framing", "Electrical & plumbing", "Custom closet", "Luxury finishes"]
-      }
-    }
+        features: [
+          "Structural framing",
+          "Electrical & plumbing",
+          "Custom closet",
+          "Luxury finishes",
+        ],
+      },
+    },
   ];
 
   const categories = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'kitchen', label: 'Kitchen' },
-    { id: 'bathroom', label: 'Bathroom' },
-    { id: 'whole-home', label: 'Whole Home' },
-    { id: 'custom', label: 'Custom Projects' }
+    { id: "all", label: "All Projects" },
+    { id: "kitchen", label: "Kitchen" },
+    { id: "bathroom", label: "Bathroom" },
+    { id: "whole-home", label: "Whole Home" },
+    { id: "custom", label: "Custom Projects" },
   ];
 
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === filter);
+  const filteredProjects =
+    filter === "all"
+      ? projects
+      : projects.filter((project) => project.category === filter);
 
   return (
     <>
       <Helmet>
         <title>Portfolio | Furu Holmes LLC</title>
-        <meta name="description" content="See our completed luxury home remodeling projects. Kitchen, bathroom, and whole home renovations by Furu Holmes LLC." />
+        <meta
+          name="description"
+          content="See our completed luxury home remodeling projects. Kitchen, bathroom, and whole home renovations by Furu Holmes LLC."
+        />
         <meta property="og:title" content="Portfolio - Furu Holmes LLC" />
-        <meta property="og:description" content="See our completed luxury home remodeling projects. Kitchen, bathroom, and whole home renovations by Furu Holmes LLC." />
+        <meta
+          property="og:description"
+          content="See our completed luxury home remodeling projects. Kitchen, bathroom, and whole home renovations by Furu Holmes LLC."
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
+        <meta
+          property="og:image"
+          content="https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        />
         <meta property="og:url" content="https://furuholmes.com/portfolio" />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -125,16 +171,19 @@ const Portfolio = () => {
           })}
         </script>
       </Helmet>
-      <div className="min-h-screen bg-gradient-to-br from-[#2d1a10] via-[#3e2723] to-[#1a120b] text-[#e7dac5]">
+      <div className="min-h-screen brand-gradient text-primary-foreground">
         <Header />
-        
+
         {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-[#3e2723]/60">
+        <section className="pt-32 pb-20 bg-primary/20 backdrop-blur-sm">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center fade-in">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#e7dac5] via-[#c9a66b] to-[#a67c52] bg-clip-text text-transparent">Our Portfolio</h1>
-              <p className="text-xl text-[#c9a66b]">
-                Explore our completed projects and see the quality craftsmanship that sets us apart
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-primary-foreground drop-shadow-lg">
+                Our Portfolio
+              </h1>
+              <p className="text-xl text-accent">
+                Explore our completed projects and see the quality craftsmanship
+                that sets us apart
               </p>
             </div>
           </div>
@@ -164,12 +213,15 @@ const Portfolio = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {filteredProjects.map((project) => (
-                <Card key={project.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 fade-in">
+                <Card
+                  key={project.id}
+                  className="overflow-hidden hover:shadow-lg transition-shadow duration-300 fade-in"
+                >
                   <div className="relative">
                     <div className="grid grid-cols-2">
                       <div className="relative">
-                        <img 
-                          src={`https://images.unsplash.com/${project.beforeImage}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80`} 
+                        <img
+                          src={`https://images.unsplash.com/${project.beforeImage}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80`}
                           alt={`Before: ${project.title} - ${project.description}`}
                           className="w-full h-48 object-cover sm:h-56 md:h-64"
                           loading="lazy"
@@ -179,8 +231,8 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div className="relative">
-                        <img 
-                          src={`https://images.unsplash.com/${project.afterImage}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80`} 
+                        <img
+                          src={`https://images.unsplash.com/${project.afterImage}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80`}
                           alt={`After: ${project.title} - ${project.description}`}
                           className="w-full h-48 object-cover sm:h-56 md:h-64"
                           loading="lazy"
@@ -191,27 +243,33 @@ const Portfolio = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   <CardContent className="p-6">
                     <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-muted-foreground mb-4">{project.description}</p>
-                    
+                    <p className="text-muted-foreground mb-4">
+                      {project.description}
+                    </p>
+
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
                         <span className="font-medium">Duration:</span>
-                        <span className="text-muted-foreground">{project.details.duration}</span>
+                        <span className="text-muted-foreground">
+                          {project.details.duration}
+                        </span>
                       </div>
                       <div className="flex justify-between">
                         <span className="font-medium">Scope:</span>
-                        <span className="text-muted-foreground">{project.details.scope}</span>
+                        <span className="text-muted-foreground">
+                          {project.details.scope}
+                        </span>
                       </div>
                     </div>
-                    
+
                     <div className="mt-4">
                       <p className="text-sm font-medium mb-2">Key Features:</p>
                       <div className="flex flex-wrap gap-1">
                         {project.details.features.map((feature, index) => (
-                          <span 
+                          <span
                             key={index}
                             className="bg-muted text-muted-foreground px-2 py-1 rounded text-xs"
                           >
@@ -260,11 +318,17 @@ const Portfolio = () => {
         {/* CTA Section */}
         <section className="py-20 hero-gradient text-primary-foreground">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Inspired by Our Work?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Inspired by Our Work?
+            </h2>
             <p className="text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-              Let's discuss how we can transform your space with the same attention to detail and quality craftsmanship.
+              Let's discuss how we can transform your space with the same
+              attention to detail and quality craftsmanship.
             </p>
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-primary font-semibold px-8">
+            <Button
+              size="lg"
+              className="bg-accent hover:bg-accent/90 text-primary font-semibold px-8"
+            >
               Start Your Project
             </Button>
           </div>

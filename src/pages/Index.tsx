@@ -19,7 +19,7 @@ const Index = () => {
     "Quality Materials",
     "Expert Craftsmanship",
     "On-Time Completion",
-    "Warranty Included"
+    "Warranty Included",
   ];
 
   return (

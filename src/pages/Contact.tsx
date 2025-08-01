@@ -11,16 +11,25 @@ const Contact = () => {
     <>
       <Helmet>
         <title>Contact | Furu Holmes LLC</title>
-        <meta name="description" content="Contact Furu Holmes LLC for a free consultation and estimate on your luxury home renovation project." />
+        <meta
+          name="description"
+          content="Contact Furu Holmes LLC for a free consultation and estimate on your luxury home renovation project."
+        />
         <meta property="og:title" content="Contact - Furu Holmes LLC" />
-        <meta property="og:description" content="Contact Furu Holmes LLC for a free consultation and estimate on your luxury home renovation project." />
+        <meta
+          property="og:description"
+          content="Contact Furu Holmes LLC for a free consultation and estimate on your luxury home renovation project."
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
+        <meta
+          property="og:image"
+          content="https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        />
         <meta property="og:url" content="https://furuholmes.com/contact" />
       </Helmet>
-      <div className="min-h-screen bg-gradient-to-br from-[#2d1a10] via-[#3e2723] to-[#1a120b] text-[#e7dac5]">
+      <div className="min-h-screen brand-gradient text-primary-foreground">
         <Header />
-        
+
         {/* Hero Section */}
         <section className="pt-32 pb-20 bg-gradient-to-br from-gray-900 to-gray-800">
           <div className="container mx-auto px-4">

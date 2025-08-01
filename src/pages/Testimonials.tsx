@@ -105,45 +105,56 @@ const Testimonials = () => {
     { number: "150+", label: "Completed Projects", icon: TrendingUp },
     { number: "4.9", label: "Average Rating", icon: Star },
     { number: "98%", label: "Customer Satisfaction", icon: Heart },
-    { number: "10+", label: "Years Experience", icon: Award }
+    { number: "10+", label: "Years Experience", icon: Award },
   ];
 
   return (
     <>
       <Helmet>
         <title>Testimonials | Furu Holmes LLC</title>
-        <meta name="description" content="Read real client testimonials and reviews for Furu Holmes LLC. Discover why homeowners trust us for luxury renovations." />
+        <meta
+          name="description"
+          content="Read real client testimonials and reviews for Furu Holmes LLC. Discover why homeowners trust us for luxury renovations."
+        />
         <meta property="og:title" content="Testimonials - Furu Holmes LLC" />
-        <meta property="og:description" content="Read real client testimonials and reviews for Furu Holmes LLC. Discover why homeowners trust us for luxury renovations." />
+        <meta
+          property="og:description"
+          content="Read real client testimonials and reviews for Furu Holmes LLC. Discover why homeowners trust us for luxury renovations."
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
+        <meta
+          property="og:image"
+          content="https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        />
         <meta property="og:url" content="https://furuholmes.com/testimonials" />
       </Helmet>
-      
+
       <div className="min-h-screen relative overflow-hidden">
         {/* Animated background */}
         <div className="fixed inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#2d1a10] via-[#3e2723] to-[#1a120b]"></div>
-          <div className="absolute top-0 -left-4 w-72 h-72 bg-[#a67c52]/60 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div className="absolute top-0 -right-4 w-72 h-72 bg-[#c9a66b]/60 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-[#bfa980]/60 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+          <div className="absolute inset-0 brand-gradient"></div>
+          <div className="absolute top-0 -left-4 w-72 h-72 bg-accent/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+          <div className="absolute top-0 -right-4 w-72 h-72 bg-primary/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-muted/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
         </div>
 
         <Header />
-        
+
         {/* Hero Section with Glassmorphism */}
         <section className="pt-32 pb-20 relative">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="bg-[#2d1a10]/80 backdrop-blur-lg rounded-3xl p-8 border border-[#a67c52]/30 shadow-2xl">
+              <div className="bg-card/80 backdrop-blur-lg rounded-3xl p-8 border border-accent/30 shadow-2xl">
                 <div className="flex justify-center mb-6">
-                  <Sparkles className="h-16 w-16 text-yellow-400 animate-pulse" />
+                  <Sparkles className="h-16 w-16 text-accent animate-pulse" />
                 </div>
-                <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-yellow-200 bg-clip-text text-transparent">
+                <h1 className="text-6xl md:text-7xl font-bold mb-6 text-foreground drop-shadow-lg">
                   Client Stories
                 </h1>
-                <p className="text-xl text-white/80 leading-relaxed">
-                  Real transformations, real emotions, real results - discover what makes our clients fall in love with their homes all over again
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  Real transformations, real emotions, real results - discover
+                  what makes our clients fall in love with their homes all over
+                  again
                 </p>
               </div>
             </div>
@@ -155,12 +166,12 @@ const Testimonials = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="group relative"
                   style={{
-                    transform: `translateY(${index % 2 === 0 ? '10px' : '-10px'})`,
-                    animationDelay: `${index * 200}ms`
+                    transform: `translateY(${index % 2 === 0 ? "10px" : "-10px"})`,
+                    animationDelay: `${index * 200}ms`,
                   }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
@@ -261,49 +272,56 @@ const Testimonials = () => {
               <div className="relative group">
                 {/* Mega glow effect */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 via-pink-600 via-blue-600 to-purple-600 rounded-[3rem] blur-2xl opacity-30 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
-                
+
                 <div className="relative bg-[#3e2723]/70 backdrop-blur-2xl rounded-[3rem] p-16 border border-[#a67c52]/30 overflow-hidden">
                   {/* Background pattern */}
                   <div className="absolute inset-0 opacity-10">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent transform -skew-y-12 translate-y-full group-hover:translate-y-0 transition-transform duration-1000"></div>
                   </div>
-                  
+
                   <div className="relative text-center">
                     {/* Floating elements */}
                     <div className="absolute top-0 left-1/4 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
                     <div className="absolute top-8 right-1/4 w-1 h-1 bg-purple-400 rounded-full animate-pulse"></div>
                     <div className="absolute bottom-8 left-1/3 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce"></div>
-                    
+
                     <Quote className="h-24 w-24 mx-auto mb-8 text-white/20" />
-                    
+
                     <div className="flex justify-center mb-8">
                       {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className="h-8 w-8 text-yellow-400 fill-current mx-1" 
-                          style={{ 
+                        <Star
+                          key={i}
+                          className="h-8 w-8 text-yellow-400 fill-current mx-1"
+                          style={{
                             animationDelay: `${i * 200}ms`,
-                            filter: 'drop-shadow(0 0 8px rgba(250, 204, 21, 0.5))'
+                            filter:
+                              "drop-shadow(0 0 8px rgba(250, 204, 21, 0.5))",
                           }}
                         />
                       ))}
                     </div>
-                    
+
                     <blockquote className="text-3xl md:text-4xl font-light mb-12 leading-relaxed bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
-                      "Working with Furu Holmes LLC was the best decision we made for our home renovation. 
-                      Their professionalism, attention to detail, and commitment to quality is unmatched. 
-                      They didn't just remodel our kitchen - they transformed our entire home experience."
+                      "Working with Furu Holmes LLC was the best decision we
+                      made for our home renovation. Their professionalism,
+                      attention to detail, and commitment to quality is
+                      unmatched. They didn't just remodel our kitchen - they
+                      transformed our entire home experience."
                     </blockquote>
-                    
+
                     <div className="flex items-center justify-center space-x-6">
                       <div className="w-20 h-20 bg-gradient-to-br from-purple-500 via-pink-500 to-yellow-500 rounded-full flex items-center justify-center shadow-2xl">
-                        <span className="text-white text-2xl font-bold">JS</span>
+                        <span className="text-white text-2xl font-bold">
+                          JS
+                        </span>
                       </div>
                       <div className="text-left">
                         <div className="text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
                           Jennifer & Mark Stevens
                         </div>
-                        <div className="text-white/70 mt-1">Complete Home Renovation, 2024</div>
+                        <div className="text-white/70 mt-1">
+                          Complete Home Renovation, 2024
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -320,27 +338,28 @@ const Testimonials = () => {
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
           </div>
-          
+
           <div className="container mx-auto px-4 text-center relative z-10">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-white via-yellow-200 to-white bg-clip-text text-transparent">
               Ready to Join Our Happy Clients?
             </h2>
             <p className="text-xl mb-12 text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Experience the same quality craftsmanship and exceptional service that our clients rave about. 
-              Your dream home transformation starts with a single conversation.
+              Experience the same quality craftsmanship and exceptional service
+              that our clients rave about. Your dream home transformation starts
+              with a single conversation.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="relative group bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold px-12 py-6 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 <span className="relative z-10">Get Your Free Estimate</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-orange-400 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-300"></div>
               </Button>
-              
-              <Button 
-                size="lg" 
+
+              <Button
+                size="lg"
                 className="relative group bg-white/10 backdrop-blur-xl border-2 border-white/30 text-white hover:bg-white/20 font-bold px-12 py-6 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 <span className="relative z-10">View Our Portfolio</span>
