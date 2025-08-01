@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingQuoteButton from '@/components/FloatingQuoteButton';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import { Helmet } from 'react-helmet';
 
 const Portfolio = () => {
   const [filter, setFilter] = useState('all');
+
+  // Analytics tracking removed for cleaner code
 
   const projects = [
     {
@@ -112,6 +115,15 @@ const Portfolio = () => {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
         <meta property="og:url" content="https://furuholmes.com/portfolio" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Portfolio",
+            "name": "Furu Holmes LLC Portfolio",
+            "description": "Luxury home remodeling projects including kitchens, bathrooms, and whole-home renovations.",
+            "url": "https://furuholmes.com/portfolio"
+          })}
+        </script>
       </Helmet>
       <div className="min-h-screen bg-gradient-to-br from-[#2d1a10] via-[#3e2723] to-[#1a120b] text-[#e7dac5]">
         <Header />
@@ -135,6 +147,7 @@ const Portfolio = () => {
               {categories.map((category) => (
                 <Button
                   key={category.id}
+                  aria-label={`Filter by ${category.label}`}
                   variant={filter === category.id ? "default" : "outline"}
                   onClick={() => setFilter(category.id)}
                   className="transition-all duration-300"
@@ -149,17 +162,16 @@ const Portfolio = () => {
         {/* Projects Grid */}
         <section className="py-12">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {filteredProjects.map((project) => (
                 <Card key={project.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 fade-in">
                   <div className="relative">
-                    {/* Before/After Images */}
                     <div className="grid grid-cols-2">
                       <div className="relative">
                         <img 
                           src={`https://images.unsplash.com/${project.beforeImage}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80`} 
                           alt={`Before: ${project.title} - ${project.description}`}
-                          className="w-full h-48 object-cover"
+                          className="w-full h-48 object-cover sm:h-56 md:h-64"
                           loading="lazy"
                         />
                         <div className="absolute top-2 left-2 bg-destructive text-destructive-foreground px-2 py-1 rounded text-xs font-semibold">
@@ -170,7 +182,7 @@ const Portfolio = () => {
                         <img 
                           src={`https://images.unsplash.com/${project.afterImage}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80`} 
                           alt={`After: ${project.title} - ${project.description}`}
-                          className="w-full h-48 object-cover"
+                          className="w-full h-48 object-cover sm:h-56 md:h-64"
                           loading="lazy"
                         />
                         <div className="absolute top-2 right-2 bg-accent text-primary px-2 py-1 rounded text-xs font-semibold">
@@ -211,6 +223,36 @@ const Portfolio = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Before/After Showcase */}
+        <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">See the Transformation</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Experience the dramatic before and after transformations that showcase our quality craftsmanship
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <BeforeAfterSlider
+                beforeImage="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                afterImage="https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                beforeAlt="Before: Outdated kitchen with old cabinets and countertops"
+                afterAlt="After: Modern kitchen with custom cabinets and quartz countertops"
+                title="Kitchen Transformation"
+              />
+              
+              <BeforeAfterSlider
+                beforeImage="https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                afterImage="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                beforeAlt="Before: Basic bathroom with standard fixtures"
+                afterAlt="After: Luxury bathroom with walk-in shower and modern fixtures"
+                title="Bathroom Renovation"
+              />
             </div>
           </div>
         </section>

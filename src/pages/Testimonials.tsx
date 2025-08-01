@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Star, Quote, Sparkles, Heart, Award, TrendingUp } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -8,89 +8,98 @@ import FloatingQuoteButton from '@/components/FloatingQuoteButton';
 import { Helmet } from 'react-helmet';
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      id: 1,
-      name: "Sarah Johnson",
-      location: "Westfield, NJ",
-      project: "Kitchen Remodeling",
-      rating: 5,
-      text: "Furu Holmes LLC transformed our outdated kitchen into a modern masterpiece. The attention to detail was incredible, and they completed the project on time and within budget. We couldn't be happier with the results!",
-      date: "March 2024"
-    },
-    {
-      id: 2,
-      name: "Mike Chen",
-      location: "Springfield, MA",
-      project: "Bathroom Renovation",
-      rating: 5,
-      text: "Professional, reliable, and the quality exceeded our expectations. Our bathroom renovation was completed flawlessly. The team was courteous and cleaned up after themselves every day. Highly recommend!",
-      date: "February 2024"
-    },
-    {
-      id: 3,
-      name: "Emily Davis",
-      location: "Hartford, CT",
-      project: "Whole Home Remodel",
-      rating: 5,
-      text: "From design to completion, the team was amazing. They listened to our vision and brought it to life beautifully. The project management was excellent, and communication was clear throughout the entire process.",
-      date: "January 2024"
-    },
-    {
-      id: 4,
-      name: "Robert Martinez",
-      location: "Providence, RI",
-      project: "Basement Finishing",
-      rating: 5,
-      text: "Our basement was completely transformed into a beautiful family room. The craftsmanship is outstanding, and they helped us maximize every square foot. The team was professional and respectful of our home.",
-      date: "December 2023"
-    },
-    {
-      id: 5,
-      name: "Lisa Thompson",
-      location: "Albany, NY",
-      project: "Kitchen & Dining Room",
-      rating: 5,
-      text: "The open concept design they created for our kitchen and dining room has completely changed how we live in our home. The workflow is perfect, and the finishes are beautiful. Worth every penny!",
-      date: "November 2023"
-    },
-    {
-      id: 6,
-      name: "David Wilson",
-      location: "Burlington, VT",
-      project: "Master Suite Addition",
-      rating: 5,
-      text: "Adding a master suite seemed like a daunting project, but Furu Holmes made it seamless. From permits to final walkthrough, they handled everything professionally. The new space is our favorite part of the house.",
-      date: "October 2023"
-    },
-    {
-      id: 7,
-      name: "Jennifer Brown",
-      location: "New Haven, CT",
-      project: "Bathroom Renovation",
-      rating: 5,
-      text: "Our small bathroom became a spa-like retreat thanks to their creative design solutions. They maximized the space beautifully and the tile work is absolutely stunning. Couldn't ask for better service.",
-      date: "September 2023"
-    },
-    {
-      id: 8,
-      name: "Mark Anderson",
-      location: "Portland, ME",
-      project: "Kitchen Remodeling",
-      rating: 5,
-      text: "The team at Furu Holmes turned our cramped galley kitchen into an open, functional space that's perfect for entertaining. Their design expertise and quality workmanship are second to none.",
-      date: "August 2023"
-    },
-    {
-      id: 9,
-      name: "Rachel Green",
-      location: "Worcester, MA",
-      project: "Custom Built-ins",
-      rating: 5,
-      text: "The custom built-in entertainment center and bookshelves they created for our living room are absolutely perfect. The attention to detail and craftsmanship is evident in every aspect of their work.",
-      date: "July 2023"
-    }
-  ];
+  const [isLoading, setIsLoading] = useState(true);
+  const [testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+    // Simulate data fetching
+    setTimeout(() => {
+      setTestimonials([
+        {
+          id: 1,
+          name: "Sarah Johnson",
+          location: "Westfield, NJ",
+          project: "Kitchen Remodeling",
+          rating: 5,
+          text: "Furu Holmes LLC transformed our outdated kitchen into a modern masterpiece. The attention to detail was incredible, and they completed the project on time and within budget. We couldn't be happier with the results!",
+          date: "March 2024"
+        },
+        {
+          id: 2,
+          name: "Mike Chen",
+          location: "Springfield, MA",
+          project: "Bathroom Renovation",
+          rating: 5,
+          text: "Professional, reliable, and the quality exceeded our expectations. Our bathroom renovation was completed flawlessly. The team was courteous and cleaned up after themselves every day. Highly recommend!",
+          date: "February 2024"
+        },
+        {
+          id: 3,
+          name: "Emily Davis",
+          location: "Hartford, CT",
+          project: "Whole Home Remodel",
+          rating: 5,
+          text: "From design to completion, the team was amazing. They listened to our vision and brought it to life beautifully. The project management was excellent, and communication was clear throughout the entire process.",
+          date: "January 2024"
+        },
+        {
+          id: 4,
+          name: "Robert Martinez",
+          location: "Providence, RI",
+          project: "Basement Finishing",
+          rating: 5,
+          text: "Our basement was completely transformed into a beautiful family room. The craftsmanship is outstanding, and they helped us maximize every square foot. The team was professional and respectful of our home.",
+          date: "December 2023"
+        },
+        {
+          id: 5,
+          name: "Lisa Thompson",
+          location: "Albany, NY",
+          project: "Kitchen & Dining Room",
+          rating: 5,
+          text: "The open concept design they created for our kitchen and dining room has completely changed how we live in our home. The workflow is perfect, and the finishes are beautiful. Worth every penny!",
+          date: "November 2023"
+        },
+        {
+          id: 6,
+          name: "David Wilson",
+          location: "Burlington, VT",
+          project: "Master Suite Addition",
+          rating: 5,
+          text: "Adding a master suite seemed like a daunting project, but Furu Holmes made it seamless. From permits to final walkthrough, they handled everything professionally. The new space is our favorite part of the house.",
+          date: "October 2023"
+        },
+        {
+          id: 7,
+          name: "Jennifer Brown",
+          location: "New Haven, CT",
+          project: "Bathroom Renovation",
+          rating: 5,
+          text: "Our small bathroom became a spa-like retreat thanks to their creative design solutions. They maximized the space beautifully and the tile work is absolutely stunning. Couldn't ask for better service.",
+          date: "September 2023"
+        },
+        {
+          id: 8,
+          name: "Mark Anderson",
+          location: "Portland, ME",
+          project: "Kitchen Remodeling",
+          rating: 5,
+          text: "The team at Furu Holmes turned our cramped galley kitchen into an open, functional space that's perfect for entertaining. Their design expertise and quality workmanship are second to none.",
+          date: "August 2023"
+        },
+        {
+          id: 9,
+          name: "Rachel Green",
+          location: "Worcester, MA",
+          project: "Custom Built-ins",
+          rating: 5,
+          text: "The custom built-in entertainment center and bookshelves they created for our living room are absolutely perfect. The attention to detail and craftsmanship is evident in every aspect of their work.",
+          date: "July 2023"
+        }
+      ]);
+      setIsLoading(false);
+    }, 2000); // 2 seconds delay for demo purposes
+  }, []);
 
   const stats = [
     { number: "150+", label: "Completed Projects", icon: TrendingUp },
@@ -172,71 +181,75 @@ const Testimonials = () => {
         <section className="py-20 relative">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={testimonial.id}
-                  className={`group relative ${index % 3 === 1 ? 'lg:translate-y-8' : ''} ${index % 3 === 2 ? 'lg:translate-y-4' : ''}`}
-                  style={{
-                    animationDelay: `${index * 100}ms`
-                  }}
-                >
-                  {/* Glow effect */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-                  
-                  {/* Main card */}
-                  <div className="relative bg-[#2d1a10]/80 backdrop-blur-xl rounded-3xl p-8 border border-[#a67c52]/20 hover:border-[#c9a66b]/40 transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2">
+              {isLoading ? (
+                <div className="spinner">Loading...</div>
+              ) : (
+                testimonials.map((testimonial, index) => (
+                  <div
+                    key={testimonial.id}
+                    className={`group relative ${index % 3 === 1 ? 'lg:translate-y-8' : ''} ${index % 3 === 2 ? 'lg:translate-y-4' : ''}`}
+                    style={{
+                      animationDelay: `${index * 100}ms`
+                    }}
+                  >
+                    {/* Glow effect */}
+                    <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
                     
-                    {/* Floating quote icon */}
-                    <div className="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full p-3 shadow-lg">
-                      <Quote className="h-6 w-6 text-white" />
-                    </div>
-
-                    {/* Stars with gradient */}
-                    <div className="flex justify-center mb-6">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className="h-6 w-6 text-yellow-400 fill-current animate-pulse" 
-                          style={{ animationDelay: `${i * 100}ms` }}
-                        />
-                      ))}
-                    </div>
-                    
-                    {/* Testimonial text */}
-                    <blockquote className="text-white/90 mb-8 text-lg leading-relaxed italic relative">
-                      <span className="text-6xl text-purple-400/30 absolute -top-4 -left-2">"</span>
-                      {testimonial.text}
-                      <span className="text-6xl text-purple-400/30 absolute -bottom-8 -right-2">"</span>
-                    </blockquote>
-                    
-                    {/* Client info with modern styling */}
-                    <div className="relative">
-                      <div className="flex items-center space-x-4">
-                        {/* Avatar placeholder with gradient */}
-                        <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
-                          <span className="text-white text-xl font-bold">
-                            {testimonial.name.split(' ').map(n => n[0]).join('')}
-                          </span>
-                        </div>
-                        
-                        <div className="flex-1">
-                          <div className="font-bold text-xl bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
-                            {testimonial.name}
-                          </div>
-                          <div className="text-white/60 text-sm">{testimonial.location}</div>
-                          <div className="text-yellow-400 font-medium text-sm mt-1 flex items-center">
-                            <Sparkles className="h-3 w-3 mr-1" />
-                            {testimonial.project}
-                          </div>
-                        </div>
+                    {/* Main card */}
+                    <div className="relative bg-[#2d1a10]/80 backdrop-blur-xl rounded-3xl p-8 border border-[#a67c52]/20 hover:border-[#c9a66b]/40 transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2">
+                      
+                      {/* Floating quote icon */}
+                      <div className="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full p-3 shadow-lg">
+                        <Quote className="h-6 w-6 text-white" />
                       </div>
-                      <div className="mt-4 text-xs text-white/50 text-right">
-                        {testimonial.date}
+
+                      {/* Stars with gradient */}
+                      <div className="flex justify-center mb-6">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            className="h-6 w-6 text-yellow-400 fill-current animate-pulse" 
+                            style={{ animationDelay: `${i * 100}ms` }}
+                          />
+                        ))}
+                      </div>
+                      
+                      {/* Testimonial text */}
+                      <blockquote className="text-white/90 mb-8 text-lg leading-relaxed italic relative">
+                        <span className="text-6xl text-purple-400/30 absolute -top-4 -left-2">"</span>
+                        {testimonial.text}
+                        <span className="text-6xl text-purple-400/30 absolute -bottom-8 -right-2">"</span>
+                      </blockquote>
+                      
+                      {/* Client info with modern styling */}
+                      <div className="relative">
+                        <div className="flex items-center space-x-4">
+                          {/* Avatar placeholder with gradient */}
+                          <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
+                            <span className="text-white text-xl font-bold">
+                              {testimonial.name.split(' ').map(n => n[0]).join('')}
+                            </span>
+                          </div>
+                          
+                          <div className="flex-1">
+                            <div className="font-bold text-xl bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                              {testimonial.name}
+                            </div>
+                            <div className="text-white/60 text-sm">{testimonial.location}</div>
+                            <div className="text-yellow-400 font-medium text-sm mt-1 flex items-center">
+                              <Sparkles className="h-3 w-3 mr-1" />
+                              {testimonial.project}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="mt-4 text-xs text-white/50 text-right">
+                          {testimonial.date}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
           </div>
         </section>
