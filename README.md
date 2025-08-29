@@ -1,58 +1,11 @@
-# Welcome to your Lovable project
 
-## Project info
+# Furu Homes Remodel
 
-**URL**: https://lovable.dev/projects/199f9b10-b986-448d-ba72-3614c50abf38
+Professional Home Remodeling & Renovation website for Furu Homes.
 
-## How can I edit this code?
+**Live Site:** [https://furuhomes.com/](https://furuhomes.com/)
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/199f9b10-b986-448d-ba72-3614c50abf38) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
+## Tech Stack
 
 - Vite
 - TypeScript
@@ -60,14 +13,44 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Local Development
 
-Simply open [Lovable](https://lovable.dev/projects/199f9b10-b986-448d-ba72-3614c50abf38) and click on Share -> Publish.
+1. Clone the repository:
+	```sh
+	git clone https://github.com/slimkd7546-cmyk/furu-homes-remodel.git
+	cd furu-homes-remodel
+	```
+2. Install dependencies:
+	```sh
+	npm install
+	```
+3. Start the development server:
+	```sh
+	npm run dev
+	```
 
-## Can I connect a custom domain to my Lovable project?
+## Deployment
 
-Yes, you can!
+This site is deployed to GitHub Pages and uses a custom domain ([furuhomes.com](https://furuhomes.com/)).
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### To deploy updates:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1. Build the project:
+	```sh
+	npm run build
+	```
+2. Commit and push changes to the `main` branch. GitHub Actions or Pages will handle deployment.
+
+### Custom Domain Setup
+
+- Ensure a `CNAME` file exists in the repository root with `furuhomes.com` as its content.
+- Asset paths and Vite config are set for custom domain compatibility (`base: './'`).
+
+## Troubleshooting
+
+- If assets (CSS/JS/images) fail to load, check that all asset paths in HTML and build output are relative (no leading slash).
+- For environment variables (e.g., Hotjar), ensure they are defined in your build or injected at runtime.
+
+## License
+
+MIT
